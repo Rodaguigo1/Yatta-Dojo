@@ -813,6 +813,31 @@ a.contato__item:hover {
   .section__title { font-size: 32px; }
   .container { padding: 0 16px; }
 }
+/* Botão "Ver mais" nos cards de modalidade */
+.card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--dark);
+  color: var(--gold);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.card__btn:hover {
+  background: var(--gold);
+  color: var(--darker);
+  transform: translateX(4px);
+}
+.card__btn svg {
+  transition: var(--transition);
+}
+.card__btn:hover svg {
+  transform: translateX(4px);
+}
 
 /* ---------- Acessibilidade ---------- */
 @media (prefers-reduced-motion: reduce) {

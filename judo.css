@@ -1,0 +1,451 @@
+/* ========================================
+   JUDÔ — Estilos específicos da página
+   ======================================== */
+
+/* ---------- Hero interno (padrão para páginas internas) ---------- */
+.page-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 20, 25, 0.85), rgba(31, 42, 55, 0.75));
+}
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: 160px 24px 100px;
+}
+.page-hero__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 24px;
+  padding: 6px 16px;
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: 50px;
+}
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(60px, 12vw, 140px);
+  line-height: 0.95;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.page-hero__lead {
+  font-size: clamp(16px, 2vw, 20px);
+  max-width: 620px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ---------- Link ativo no menu ---------- */
+.nav__link--active {
+  color: var(--gold) !important;
+  position: relative;
+}
+.nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 13px;
+  right: 13px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ---------- Sobre a modalidade ---------- */
+.judo-sobre { background: var(--light); }
+.judo-sobre__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.judo-sobre__media {
+  position: relative;
+}
+.judo-sobre__media img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 1;
+}
+.judo-sobre__media-accent {
+  position: absolute;
+  top: 20px; left: 20px;
+  right: -20px; bottom: -20px;
+  border: 3px solid var(--gold);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+.judo-sobre__content p {
+  color: var(--gray-600);
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.judo-pilares {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.judo-pilares li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--white);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.judo-pilares li span {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.judo-pilares li strong {
+  display: block;
+  color: var(--dark);
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+.judo-pilares li div {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+/* ---------- Instrutores ---------- */
+.instrutores { background: var(--white); }
+.instrutores__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.instrutor {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+}
+.instrutor:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.instrutor__img {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: var(--gray-200);
+}
+.instrutor__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.instrutor__body {
+  padding: 24px;
+}
+.instrutor__nome {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.instrutor__faixa {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 4px 10px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+}
+.instrutor__idade {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-bottom: 12px;
+}
+.instrutor__dias {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.instrutor__dias li {
+  font-size: 13px;
+  color: var(--gray-600);
+  padding: 4px 0;
+}
+
+/* ---------- SENSEI DESTAQUE — borda dourada ---------- */
+.instrutor--destaque {
+  grid-column: span 2;
+  border: 3px solid var(--gold);
+  background: linear-gradient(135deg, var(--white) 0%, #FFF9E6 100%);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.instrutor--destaque:hover {
+  transform: translateY(-10px);
+}
+.instrutor--destaque .instrutor__img {
+  width: 45%;
+  height: auto;
+  min-height: 460px;
+  flex-shrink: 0;
+}
+.instrutor--destaque .instrutor__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.instrutor--destaque .instrutor__body {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.instrutor--destaque .instrutor__nome {
+  font-size: 36px;
+  color: var(--dark);
+}
+.instrutor--destaque .instrutor__faixa {
+  background: var(--dark);
+  color: var(--gold);
+  font-size: 13px;
+  padding: 6px 14px;
+}
+.instrutor__badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--gold);
+  color: var(--darker);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.4);
+}
+.instrutor__curriculo {
+  background: var(--white);
+  padding: 24px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--gold);
+}
+.instrutor__curriculo h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.instrutor__curriculo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.instrutor__curriculo li {
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
+}
+.instrutor__curriculo li:last-child {
+  border-bottom: none;
+}
+
+/* ---------- Planos ---------- */
+.planos { background: var(--light); }
+.planos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.plano {
+  background: var(--white);
+  padding: 36px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.plano:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.plano--destaque {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, var(--white) 0%, #FFF9E6 100%);
+  transform: scale(1.05);
+}
+.plano--destaque:hover {
+  transform: scale(1.05) translateY(-6px);
+}
+.plano__flag {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--darker);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.4);
+}
+.plano__head {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-200);
+}
+.plano__head h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.plano__sub {
+  font-size: 13px;
+  color: var(--gray-600);
+}
+.plano__preco {
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+.plano__moeda {
+  font-size: 20px;
+  color: var(--dark);
+  font-weight: 600;
+  margin-top: 12px;
+}
+.plano__valor {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1;
+  color: var(--gold);
+}
+.plano__periodo {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 24px;
+}
+.plano__lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  flex-grow: 1;
+}
+.plano__lista li {
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
+}
+.plano__lista li:last-child {
+  border-bottom: none;
+}
+.planos__nota {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--gray-600);
+  font-size: 15px;
+}
+.planos__nota strong {
+  color: var(--dark);
+}
+
+/* ---------- Galeria Judô ---------- */
+.galeria-judo { background: var(--white); }
+
+/* ---------- CTA Final ---------- */
+.judo-cta {
+  background: var(--darker);
+  color: var(--white);
+  text-align: center;
+}
+.judo-cta__wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.judo-cta__wrap p {
+  color: rgba(255,255,255,0.8);
+  font-size: 18px;
+  margin: 24px 0 36px;
+}
+.judo-cta__botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 880px) {
+  .judo-sobre__grid { grid-template-columns: 1fr; gap: 40px; }
+  .judo-sobre__media img { height: 360px; }
+  .judo-sobre__media-accent { display: none; }
+  .judo-pilares { grid-template-columns: 1fr; }
+  .instrutores__grid { grid-template-columns: repeat(2, 1fr); }
+  .instrutor--destaque {
+    grid-column: span 2;
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .instrutor--destaque .instrutor__img {
+    width: 100%;
+    height: 380px;
+    min-height: auto;
+  }
+  .planos__grid { grid-template-columns: 1fr; gap: 32px; }
+  .plano--destaque { transform: none; }
+  .plano--destaque:hover { transform: translateY(-6px); }
+}
+
+@media (max-width: 600px) {
+  .instrutores__grid { grid-template-columns: 1fr; }
+  .instrutor--destaque { grid-column: span 1; }
+  .instrutor--destaque .instrutor__img { height: 320px; }
+}
