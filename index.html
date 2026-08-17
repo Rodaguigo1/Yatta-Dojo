@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yatta Dojo Clube - Judô, Jiu-Jitsu e Krav Maga em Vila Velha/ES. Tradição, disciplina e técnica para todas as idades." />
+  <meta name="theme-color" content="#1F2A37" />
+
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:title" content="Yatta Dojo Clube — Artes Marciais em Vila Velha/ES" />
+  <meta property="og:description" content="Judô, Jiu-Jitsu e Krav Maga com instrutores faixa-preta. Agende sua aula experimental!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=1200" />
+
+  <title>Yatta Dojo Clube — Judô, Jiu-Jitsu e Krav Maga | Vila Velha/ES</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet (mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+</head>
+<body>
+
+  <!-- =================== HEADER =================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo" aria-label="Yatta Dojo Clube - Página inicial">
+        <img src="./assets/logo.png" alt="Yatta Dojo Clube" />
+        <span class="logo__text">Yatta <strong>Dojo Clube</strong></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link">Início</a></li>
+          <li><a href="#modalidades" class="nav__link">Modalidades</a></li>
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="#horarios" class="nav__link">Horários</a></li>
+          <li><a href="#galeria" class="nav__link">Galeria</a></li>
+          <li><a href="#mapa" class="nav__link">Localização</a></li>
+          <li><a href="https://wa.me/5527998791978?text=Olá! Quero agendar uma aula experimental." class="nav__link nav__link--cta" target="_blank" rel="noopener">Agendar Aula</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =================== HERO =================== -->
+  <section class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <video class="hero__video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=1920">
+      <source src="https://videos.pexels.com/video-files/4761762/4761762-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+    </video>
+
+    <div class="container hero__content">
+      <span class="hero__eyebrow" data-reveal>YATTA DOJO CLUBE • VILA VELHA/ES</span>
+      <h1 class="hero__title" data-reveal>
+        Tradição. <span class="text-gold">Disciplina.</span><br />
+        Respeito.
+      </h1>
+      <p class="hero__subtitle" data-reveal>
+        Judô, Jiu-Jitsu e Krav Maga para todas as idades. Venha treinar com a gente.
+      </p>
+      <div class="hero__cta" data-reveal>
+        <a href="https://wa.me/5527998791978?text=Olá! Quero agendar uma aula experimental no Yatta Dojo." class="btn btn--primary" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Agendar Aula Experimental
+        </a>
+        <a href="#modalidades" class="btn btn--ghost">Conheça as Modalidades</a>
+      </div>
+    </div>
+
+    <a href="#modalidades" class="hero__scroll" aria-label="Rolar para próxima seção">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- =================== MODALIDADES =================== -->
+  <section class="section modalidades" id="modalidades">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">MODALIDADES</span>
+        <h2 class="section__title">Encontre o seu <span class="text-gold">caminho</span></h2>
+        <p class="section__lead">Três artes marciais, uma família. Escolha a que combina com você.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card" data-reveal>
+          <div class="card__img" style="background-image: url('https://images.unsplash.com/photo-1615117972428-28de87e57f3e?w=800');"></div>
+          <div class="card__body">
+            <span class="card__tag">TRADIÇÃO</span>
+            <h3 class="card__title">Judô</h3>
+            <p class="card__text">O "caminho suave" — técnica, equilíbrio e uso inteligente da força. Ideal para crianças e adultos que buscam disciplina e autoconfiança.</p>
+            <ul class="card__list">
+              <li>✓ Aulas para crianças a partir de 5 anos</li>
+              <li>✓ Treino de quedas, imobilizações e golpes</li>
+              <li>✓ Preparação para competições</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__img" style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800');"></div>
+          <div class="card__body">
+            <span class="card__tag card__tag--gold">DEFESA PESSOAL</span>
+            <h3 class="card__title">Jiu-Jitsu</h3>
+            <p class="card__text">A arte suave brasileira. Domine seu oponente com técnica, sem depender de força bruta. Treino de solo, finalizações e estratégias.</p>
+            <ul class="card__list">
+              <li>✓ Gi e No-Gi</li>
+              <li>✓ Open Mat para alunos e visitantes</li>
+              <li>✓ Faixas da infância à adulta</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card__img" style="background-image: url('https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=800');"></div>
+          <div class="card__body">
+            <span class="card__tag">EFICÁCIA</span>
+            <h3 class="card__title">Krav Maga</h3>
+            <p class="card__text">Sistema de combate realista, criado para defesa pessoal. Aprenda a reagir a situações de risco com eficiência e consciência.</p>
+            <ul class="card__list">
+              <li>✓ Treino baseado em situações reais</li>
+              <li>✓ Defesa contra armas, múltiplos oponentes</li>
+              <li>✓ Aulas para homens e mulheres</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== SOBRE =================== -->
+  <section class="section sobre" id="sobre">
+    <div class="container sobre__grid">
+      <div class="sobre__media" data-reveal>
+        <img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?w=900" alt="Treino no Yatta Dojo Clube" />
+        <div class="sobre__media-accent" aria-hidden="true"></div>
+      </div>
+      <div class="sobre__content" data-reveal>
+        <span class="section__eyebrow">SOBRE NÓS</span>
+        <h2 class="section__title">Mais que um dojo. <span class="text-gold">Uma família.</span></h2>
+        <p>Fundado com a missão de formar atletas e cidadãos através das artes marciais, o Yatta Dojo Clube oferece ensino de Judô, Jiu-Jitsu e Krav Maga em um ambiente que une tradição, disciplina e respeito.</p>
+        <p>Nossos instrutores, faixas-pretas com ampla experiência em competições nacionais e internacionais, conduzem alunos de todas as idades em uma jornada de desenvolvimento físico, mental e técnico.</p>
+
+        <div class="sobre__stats">
+          <div class="stat">
+            <strong>15+</strong>
+            <span>anos de história</span>
+          </div>
+          <div class="stat">
+            <strong>500+</strong>
+            <span>alunos formados</span>
+          </div>
+          <div class="stat">
+            <strong>50+</strong>
+            <span>medalhas em competições</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== HORÁRIOS =================== -->
+  <section class="section horarios" id="horarios">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">HORÁRIOS</span>
+        <h2 class="section__title">Quando você pode <span class="text-gold">treinar?</span></h2>
+        <p class="section__lead">Confira nossa grade horária e escolha o melhor turno.</p>
+      </header>
+
+      <div class="table-wrap" data-reveal>
+        <table class="horarios-table">
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Horário</th>
+              <th>Modalidade</th>
+              <th>Público</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="4">Seg / Qua</td><td>07:00</td><td>Krav Maga</td><td>Adulto</td></tr>
+            <tr><td>09:00</td><td>Jiu-Jitsu</td><td>Adulto</td></tr>
+            <tr><td>17:00</td><td>Judô</td><td>Kids (5-12)</td></tr>
+            <tr><td>19:00</td><td>Jiu-Jitsu</td><td>Adulto</td></tr>
+            <tr><td rowspan="4">Ter / Qui</td><td>07:00</td><td>Judô</td><td>Adulto</td></tr>
+            <tr><td>17:00</td><td>Krav Maga</td><td>Teens</td></tr>
+            <tr><td>19:00</td><td>Judô</td><td>Adulto</td></tr>
+            <tr><td>20:30</td><td>Krav Maga</td><td>Adulto</td></tr>
+            <tr><td>Sexta</td><td>19:00</td><td>Jiu-Jitsu (Open Mat)</td><td>Todos</td></tr>
+            <tr><td rowspan="2">Sábado</td><td>09:00</td><td>Judô</td><td>Kids</td></tr>
+            <tr><td>10:30</td><td>Jiu-Jitsu</td><td>Kids</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== GALERIA =================== -->
+  <section class="section galeria" id="galeria">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">GALERIA</span>
+        <h2 class="section__title">Bastidores do <span class="text-gold">tatame</span></h2>
+      </header>
+      <div class="galeria__grid" data-reveal>
+        <div class="galeria__item" style="background-image: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?w=600');"></div>
+        <div class="galeria__item" style="background-image: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=600');"></div>
+        <div class="galeria__item" style="background-image: url('https://images.unsplash.com/photo-1615117972428-28de87e57f3e?w=600');"></div>
+        <div class="galeria__item" style="background-image: url('https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?w=600');"></div>
+        <div class="galeria__item" style="background-image: url('https://images.unsplash.com/photo-1517438476312-10d79c077509?w=600');"></div>
+        <div class="galeria__item" style="background-image: url('https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=600');"></div>
+      </div>
+      <p class="galeria__note" data-reveal>📸 Siga nosso <a href="https://www.instagram.com/yattadojoclube/" target="_blank" rel="noopener">@yattadojoclube</a> para ver mais.</p>
+    </div>
+  </section>
+
+  <!-- =================== MAPA =================== -->
+  <section class="section mapa" id="mapa">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">ONDE ESTAMOS</span>
+        <h2 class="section__title">Vem treinar <span class="text-gold">conosco</span></h2>
+        <p class="section__lead">Estamos em Vila Velha/ES. Veja no mapa como chegar.</p>
+      </header>
+      <div class="mapa__wrap" data-reveal>
+        <div id="map"></div>
+        <div class="mapa__card">
+          <strong>📍 Yatta Dojo Clube</strong>
+          <p>Vila Velha/ES<br/>Próximo ao Adventure Mall</p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=-20.34115,-40.28572" target="_blank" rel="noopener" class="mapa__btn">
+            Como chegar →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CTA / CONTATO =================== -->
+  <section class="section contato" id="contato">
+    <div class="container contato__wrap">
+      <div class="contato__content" data-reveal>
+        <span class="section__eyebrow section__eyebrow--light">VEM TREINAR COM A GENTE</span>
+        <h2 class="section__title">Sua primeira aula é por nossa conta.</h2>
+        <p>Agende agora pelo WhatsApp ou preencha o formulário. Em até 24h entraremos em contato.</p>
+
+        <div class="contato__info">
+          <a href="https://wa.me/5527998791978" target="_blank" rel="noopener" class="contato__item">
+            <strong>� WhatsApp</strong>
+            <span>(27) 99879-1978</span>
+          </a>
+          <a href="https://www.instagram.com/yattadojoclube/" target="_blank" rel="noopener" class="contato__item">
+            <strong>📷 Instagram</strong>
+            <span>@yattadojoclube</span>
+          </a>
+          <div class="contato__item">
+            <strong>� Localização</strong>
+            <span>Vila Velha/ES<br/>Próximo ao Adventure Mall</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="form" data-reveal onsubmit="event.preventDefault(); window.open('https://wa.me/5527998791978?text=' + encodeURIComponent('Olá! Me chamo ' + this.nome.value + ' e tenho interesse em ' + this.modalidade.value + '. ' + this.mensagem.value), '_blank');">
+        <h3 class="form__title">Agende sua aula experimental</h3>
+
+        <label class="form__field">
+          <span>Nome completo</span>
+          <input type="text" name="nome" required placeholder="Seu nome" />
+        </label>
+
+        <label class="form__field">
+          <span>Modalidade de interesse</span>
+          <select name="modalidade" required>
+            <option value="">Selecione...</option>
+            <option value="Judô">Judô</option>
+            <option value="Jiu-Jitsu">Jiu-Jitsu</option>
+            <option value="Krav Maga">Krav Maga</option>
+          </select>
+        </label>
+
+        <label class="form__field">
+          <span>Mensagem (opcional)</span>
+          <textarea name="mensagem" rows="3" placeholder="Conte um pouco sobre seu objetivo..."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--primary btn--block">
+          Enviar pelo WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="./assets/logo.png" alt="Yatta Dojo Clube" />
+        <p>Yatta Dojo Clube — Judô, Jiu-Jitsu e Krav Maga em Vila Velha/ES.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#modalidades">Modalidades</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#horarios">Horários</a>
+        <a href="#mapa">Localização</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/yattadojoclube/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/5527998791978" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year"></span> Yatta Dojo Clube. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5527998791978?text=Olá! Gostaria de saber mais sobre as aulas no Yatta Dojo." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
