@@ -135,9 +135,13 @@
 .instrutores { background: var(--white); }
 .instrutores__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 por fileira */
   gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
+
+/* ---------- Card base (TODOS horizontais: foto | texto) ---------- */
 .instrutor {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -146,24 +150,33 @@
   transition: var(--transition);
   border: 2px solid transparent;
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 .instrutor:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
 .instrutor__img {
-  width: 100%;
-  height: 280px;
+  width: 45%;
+  min-height: 320px;
+  height: auto;
   overflow: hidden;
   background: var(--gray-200);
+  flex-shrink: 0;
 }
 .instrutor__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
 }
 .instrutor__body {
+  flex: 1;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .instrutor__nome {
   font-family: var(--font-display);
@@ -182,6 +195,7 @@
   padding: 4px 10px;
   border-radius: 50px;
   margin-bottom: 8px;
+  align-self: flex-start;
 }
 .instrutor__idade {
   font-size: 14px;
@@ -199,7 +213,7 @@
   padding: 4px 0;
 }
 
-/* ---------- SENSEI DESTAQUE — borda dourada ---------- */
+/* ---------- SENSEI DESTAQUE — borda dourada (ocupa 2 colunas) ---------- */
 .instrutor--destaque {
   grid-column: span 2;
   border: 3px solid var(--gold);
@@ -208,8 +222,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  max-width: 900px;
-  margin: 0 auto;
+  position: relative;
 }
 .instrutor--destaque:hover {
   transform: translateY(-10px);
@@ -217,7 +230,7 @@
 .instrutor--destaque .instrutor__img {
   width: 45%;
   height: auto;
-  min-height: 460px;
+  min-height: 480px;
   flex-shrink: 0;
 }
 .instrutor--destaque .instrutor__img img {
@@ -234,19 +247,19 @@
   justify-content: center;
 }
 .instrutor--destaque .instrutor__nome {
-  font-size: 36px;
+  font-size: 38px;
   color: var(--dark);
 }
 .instrutor--destaque .instrutor__faixa {
   background: var(--dark);
   color: var(--gold);
-  font-size: 13px;
+  font-size: 14px;
   padding: 6px 14px;
 }
 .instrutor__badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 20px;
+  left: 20px;
   background: var(--gold);
   color: var(--darker);
   font-size: 11px;
@@ -262,6 +275,7 @@
   padding: 24px;
   border-radius: var(--radius);
   border-left: 4px solid var(--gold);
+  margin-top: 16px;
 }
 .instrutor__curriculo h4 {
   font-family: var(--font-display);
@@ -428,17 +442,17 @@
   .judo-sobre__media img { height: 360px; }
   .judo-sobre__media-accent { display: none; }
   .judo-pilares { grid-template-columns: 1fr; }
-  .instrutores__grid { grid-template-columns: repeat(2, 1fr); }
-  .instrutor--destaque {
-    grid-column: span 2;
+  
+  /* No tablet: continua 2 por fileira mas card vira vertical (foto em cima) */
+  .instrutor {
     flex-direction: column;
-    max-width: 100%;
   }
-  .instrutor--destaque .instrutor__img {
+  .instrutor__img {
     width: 100%;
     height: 380px;
     min-height: auto;
   }
+  
   .planos__grid { grid-template-columns: 1fr; gap: 32px; }
   .plano--destaque { transform: none; }
   .plano--destaque:hover { transform: translateY(-6px); }
@@ -447,5 +461,168 @@
 @media (max-width: 600px) {
   .instrutores__grid { grid-template-columns: 1fr; }
   .instrutor--destaque { grid-column: span 1; }
-  .instrutor--destaque .instrutor__img { height: 320px; }
+  .instrutor--destaque .instrutor__img { height: 380px; min-height: auto; }
+  .instrutor__img { height: 380px; }
+}
+
+/* ---------- Horários Judô ---------- */
+.horarios-judo { background: var(--light); }
+.horarios-judo__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.horario-judo {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border-left: 4px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.horario-judo:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.horario-judo__dia {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold);
+  background: var(--dark);
+  padding: 4px 10px;
+  border-radius: 50px;
+  align-self: flex-start;
+  margin-bottom: 6px;
+}
+.horario-judo__titulo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: var(--dark);
+  margin: 0;
+}
+.horario-judo__faixa {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-600);
+  background: var(--light);
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-top: 2px;
+  align-self: flex-start;
+}
+.horario-judo__hora {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--gold);
+  margin-top: 8px;
+}
+.horario-judo__prof {
+  font-size: 13px;
+  color: var(--gray-600);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+@media (max-width: 880px) {
+  .horarios-judo__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .horarios-judo__grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Horários Judô (Tabela) ---------- */
+.horarios-judo { background: var(--light); }
+
+.judo-tabela {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 700px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.judo-tabela thead th {
+  background: var(--dark);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 18px 16px;
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+}
+.judo-tabela tbody td {
+  padding: 16px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: middle;
+}
+.judo-tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+.judo-tabela tbody tr:hover td {
+  background: var(--light);
+}
+.judo-tabela__hora {
+  font-family: var(--font-display) !important;
+  font-size: 18px !important;
+  color: var(--dark) !important;
+  letter-spacing: 1px;
+  font-weight: 400;
+  background: var(--light);
+  text-align: center !important;
+}
+.judo-tabela tbody td small {
+  display: block;
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+
+.judo-faixa {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.judo-faixa--kids {
+  background: #FFE9B3;
+  color: #8B6B0F;
+}
+.judo-faixa--juvenil {
+  background: #1F2A37;
+  color: var(--gold);
+}
+.judo-faixa--adulto {
+  background: var(--gold);
+  color: var(--darker);
+}
+
+.judo-tabela-legenda {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--gray-600);
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }

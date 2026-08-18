@@ -839,6 +839,58 @@ a.contato__item:hover {
   transform: translateX(4px);
 }
 
+/* ---------- Resumo de Horários (página principal) ---------- */
+.horarios-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.horario-bloco {
+  background: var(--white);
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+.horario-bloco:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold);
+}
+.horario-bloco h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.horario-bloco p {
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+.horario-link {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  transition: var(--transition);
+}
+.horario-link:hover {
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+@media (max-width: 880px) {
+  .horarios-resumo { grid-template-columns: 1fr; }
+}
+
 /* ---------- Acessibilidade ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
